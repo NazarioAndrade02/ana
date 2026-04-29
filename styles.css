@@ -29,9 +29,9 @@
 :root {
   --champagne: #D4AFA0;
   --cream: #ffffff;
-  --text-dark: #5C4033;
-  --text-mid: #5c3f30;
-  --text-light: #644f41;
+    --text-dark: black;
+  --text-mid: black;
+  --text-light: black;
 }
 
 * {
