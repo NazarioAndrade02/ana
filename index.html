@@ -6,10 +6,14 @@
   <title>Elanie Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-   <link rel="icon" type="image/x-icon" href="img/logo.png">
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
 </head>
 
 <body>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <canvas class="cursor-trail" id="cursor-trail"></canvas>
 
   <!-- Barra superior -->
   <div class="top-bar">
@@ -56,7 +60,9 @@
         recuerdos que perduran
       </p>
     </div>
-    <div class="about-img"></div>
+    <div class="about-img">
+      <img src="img/img10.jpg" alt="Elanie Design">
+    </div>
   </section>
 
   <!-- PRODUCTOS -->
@@ -65,46 +71,59 @@
 
     <div class="grid">
 
-      <!-- Producto -->
       <div class="card" onclick="openModal('img/img1.jpg', 'Producto 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img1.jpg" alt="Producto 1" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img1.jpg" alt="Producto 1" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 1</p>
       </div>
 
       <div class="card" onclick="openModal('img/img2.jpg', 'Producto 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img2.jpg" alt="Producto 2" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img2.jpg" alt="Producto 2" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 2</p>
       </div>
 
       <div class="card" onclick="openModal('img/img3.jpg', 'Producto 3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img3.jpg" alt="Producto 3" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img3.jpg" alt="Producto 3" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 3</p>
       </div>
 
       <div class="card" onclick="openModal('img/img4.jpg', 'Producto 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img4.jpg" alt="Producto 4" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img4.jpg" alt="Producto 4" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 4</p>
       </div>
 
       <div class="card" onclick="openModal('img/img5.jpg', 'Producto 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img5.jpg" alt="Producto 5" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img5.jpg" alt="Producto 5" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 5</p>
       </div>
 
       <div class="card" onclick="openModal('img/img6.jpg', 'Producto 6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img6.jpg" alt="Producto 6" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img6.jpg" alt="Producto 6" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 6</p>
       </div>
 
       <div class="card" onclick="openModal('img/img7.jpg', 'Producto 7', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
-        <img src="img/img7.jpg" alt="Producto 7" class="card-img">
-        <div class="overlay">Comprar</div>
+        <div class="card-image-wrap">
+          <img src="img/img7.jpg" alt="Producto 7" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
         <p>Producto 7</p>
       </div>
 
@@ -114,21 +133,15 @@
   <!-- MODAL -->
   <div id="modal" class="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()">X</span>
-
+      <span class="close" onclick="closeModal()">&#10005;</span>
       <div class="modal-body">
         <div class="modal-text">
           <h2 id="modal-title">Título de producto</h2>
-          <p id="modal-desc">
-            Descripción Descripción Descripción Descripción
-            Descripción Descripción Descripción
-          </p>
+          <p id="modal-desc">Descripción del producto</p>
           <button class="btn">Comprar</button>
         </div>
-
         <img id="modal-img" class="modal-img" src="" alt="Producto">
       </div>
-
     </div>
   </div>
 
@@ -174,83 +187,97 @@
 
   </section>
 
+  <!-- CONTACTO -->
   <section id="contacto" class="contact">
     <h2>Contacto</h2>
     <p class="contact-sub">Escríbenos, con gusto te atendemos</p>
 
-    <div class="contact-box">
+    <div class="contact-wrapper">
 
-      <form class="contact-form" action="mailto:Elanie.eventos@gmail.com" method="post" enctype="text/plain">
-        <input type="text" placeholder="Nombre" required>
-        <input type="email" placeholder="Correo electrónico" required>
-        <textarea placeholder="Cuéntanos sobre tu pedido..." required></textarea>
-        <button class="btn" type="submit">Enviar mensaje</button>
-      </form>
+      <div class="contact-box">
+        <form class="contact-form" action="mailto:Elanie.eventos@gmail.com" method="post" enctype="text/plain">
+          <input type="text" placeholder="Nombre" required>
+          <input type="email" placeholder="Correo electrónico" required>
+          <textarea placeholder="Cuéntanos sobre tu pedido..." required></textarea>
+          <button class="btn" type="submit">Enviar mensaje</button>
+        </form>
 
-      <div class="contact-social">
+        <div class="contact-social">
+          <a href="https://www.instagram.com/elanie_design?igsh=amdkOTFtdjBuNDYx&utm_source=qr" target="_blank" class="social-item">
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </div>
+            <div>
+              <span class="social-label">Instagram</span>
+              <span class="social-handle">@elanie_design</span>
+            </div>
+          </a>
 
-        <a href="https://www.instagram.com/elanie_design?igsh=amdkOTFtdjBuNDYx&utm_source=qr" target="_blank"
-          class="social-item">
-          <div class="social-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="2" y="2" width="20" height="20" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-            </svg>
-          </div>
-          <div>
-            <span class="social-label">Instagram</span>
-            <span class="social-handle">@elanie_design</span>
-          </div>
-        </a>
+          <a href="https://wa.me/message/4SQRAQCFIOYOH1" target="_blank" class="social-item">
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.508 5.829L.057 23.5l5.83-1.527A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.42l-.37-.22-3.46.91.92-3.37-.24-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+              </svg>
+            </div>
+            <div>
+              <span class="social-label">WhatsApp</span>
+              <span class="social-handle">Escríbenos directo</span>
+            </div>
+          </a>
 
-        <a href="https://wa.me/message/4SQRAQCFIOYOH1" target="_blank" class="social-item">
-          <div class="social-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-              <path
-                d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.508 5.829L.057 23.5l5.83-1.527A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.42l-.37-.22-3.46.91.92-3.37-.24-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
-            </svg>
-          </div>
-          <div>
-            <span class="social-label">WhatsApp</span>
-            <span class="social-handle">Escríbenos directo</span>
-          </div>
-        </a>
+          <a href="mailto:Elanie.eventos@gmail.com" class="social-item">
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <polyline points="2,4 12,13 22,4" />
+              </svg>
+            </div>
+            <div>
+              <span class="social-label">Correo</span>
+              <span class="social-handle">Elanie.eventos@gmail.com</span>
+            </div>
+          </a>
 
-        <a href="mailto:Elanie.eventos@gmail.com" class="social-item">
-          <div class="social-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <polyline points="2,4 12,13 22,4" />
-            </svg>
-          </div>
-          <div>
-            <span class="social-label">Correo</span>
-            <span class="social-handle">Elanie.eventos@gmail.com</span>
-          </div>
-        </a>
-
-        <a href="https://maps.app.goo.gl/z5ddMWgDGg1xVUeH7?g_st=iw" target="_blank" class="social-item">
-          <div class="social-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
-              <circle cx="12" cy="9" r="2.5" />
-            </svg>
-          </div>
-          <div>
-            <span class="social-label">Ubicación</span>
-            <span class="social-handle">Ver en Google Maps</span>
-          </div>
-        </a>
-
+          <a href="https://maps.app.goo.gl/z5ddMWgDGg1xVUeH7?g_st=iw" target="_blank" class="social-item">
+            <div class="social-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                <circle cx="12" cy="9" r="2.5" />
+              </svg>
+            </div>
+            <div>
+              <span class="social-label">Ubicación</span>
+              <span class="social-handle">Ver en Google Maps</span>
+            </div>
+          </a>
+        </div>
       </div>
+
+      <!-- Imagen lateral -->
+      <div class="contact-img-wrap">
+        <img src="img/img10.jpg" alt="Elanie Design" class="contact-side-img">
+      </div>
+
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">Elanie Design</span>
+      <span class="footer-copy">&copy; 2025 Elanie Design. Todos los derechos reservados.</span>
+      <nav class="footer-links">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
