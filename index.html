@@ -17,13 +17,25 @@
 
   <!-- Barra superior -->
   <div class="top-bar">
-    Envío gratis en la compra de Producto
+    <div class="top-bar-inner">
+      <span>Envío gratis en la compra de Producto</span>
+      <span>✦ Papelería personalizada para momentos especiales</span>
+      <span>✦ Diseños únicos hechos con dedicación</span>
+    </div>
   </div>
+
+  <!-- Overlay para cerrar el menú móvil -->
+  <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- Header -->
   <header class="header">
     <h1 class="logo">Elanie Design</h1>
-    <nav>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="main-nav">
       <ul class="menu">
         <li><a href="#inicio" class="active">Inicio</a></li>
         <li><a href="#acerca">Acerca de</a></li>
@@ -36,8 +48,9 @@
 
   <!-- HERO -->
   <section id="inicio" class="hero">
+    <div class="hero-bg"></div>
     <div class="hero-content">
-      <h2>Imagen de negocio con texto</h2>
+      <h2>Creamos detalles que cuentan historias</h2>
       <button class="btn">Descubrir</button>
     </div>
   </section>
@@ -61,7 +74,7 @@
       </p>
     </div>
     <div class="about-img">
-      <img src="img/img10.jpg" alt="Elanie Design">
+      <img src="img/19.jpeg" alt="Elanie Design">
     </div>
   </section>
 
@@ -71,60 +84,284 @@
 
     <div class="grid">
 
-      <div class="card" onclick="openModal('img/img1.jpg', 'Producto 1', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card" onclick="openModal(
+'img/21.jpeg',
+'Agenda Docente Primaria y Kinder',
+'• datos personales • mi centro de trabajo • metas • fechas importantes • contraseñas • ahorro anual • directorio general • nem (ejes articuladores y campos formativos) • efemérides • comisiones • guardias y honores • calendario 2026-2027 • horario de clases • agenda agosto 2026-julio 2027\n\nCada mes incluye registros de asistencia, trabajo en clase, participaciones, tareas y proyectos (40 alumnos). noviembre, marzo y julio incluyen evaluaciones (40 alumnos).\n\n• Grupo: matrícula, datos de alumnos, recepción/entrega de documentos, altas y bajas, estadística anual, juntas con pf, incidencias, materiales, entrega de materiales, cooperaciones y listas de registro • consejo técnico escolar • hojas de notas\n\nNota: En kinder se omiten los apartados marcados en rojo.'
+)">
         <div class="card-image-wrap">
-          <img src="img/img1.jpg" alt="Producto 1" class="card-img">
+          <img src="img/21.jpeg" alt="Producto 1" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 1</p>
+        <p>
+          Agenda Docente Primaria y Kinder
+          <br>
+          $680 costo preventa hasta el 30 junio
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img2.jpg', 'Producto 2', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/22.jpeg', 'Bitácora de incidencias', '100 folios de incidencias\nNotas\nTamaño medio oficio')">
         <div class="card-image-wrap">
-          <img src="img/img2.jpg" alt="Producto 2" class="card-img">
+          <img src="img/22.jpeg" alt="Producto 2" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 2</p>
+        <p>Bitácora de incidencias
+          <br>
+          $550
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img3.jpg', 'Producto 3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/23.jpeg', 'Libreta personalizada', '100 hojas\nTamaño medio oficio')">
         <div class="card-image-wrap">
-          <img src="img/img3.jpg" alt="Producto 3" class="card-img">
+          <img src="img/23.jpeg" alt="Producto 3" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 3</p>
+        <p>Libreta personalizada
+          <br>
+          $500
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img4.jpg', 'Producto 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/1.jpeg', 'Tags textura 10pz', '• Tags\n• Tamaño  8x8\n• Papel textura')">
         <div class="card-image-wrap">
-          <img src="img/img4.jpg" alt="Producto 4" class="card-img">
+          <img src="img/1.jpeg" alt="Producto 4" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 4</p>
+        <p>Tags textura 10pz
+          <br>
+          $160
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img5.jpg', 'Producto 5', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/2.jpeg', 'Tags + foil 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
         <div class="card-image-wrap">
-          <img src="img/img5.jpg" alt="Producto 5" class="card-img">
+          <img src="img/2.jpeg" alt="Producto 5" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 5</p>
+        <p>Tags + foil 10pz
+          <br>
+          $190
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img6.jpg', 'Producto 6', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/3.jpeg', 'Caja slider mini', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
         <div class="card-image-wrap">
-          <img src="img/img6.jpg" alt="Producto 6" class="card-img">
+          <img src="img/3.jpeg" alt="Producto 6" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 6</p>
+        <p>Caja slider mini
+          <br>
+          $45 c/u
+        </p>
       </div>
 
-      <div class="card" onclick="openModal('img/img7.jpg', 'Producto 7', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+      <div class="card"
+        onclick="openModal('img/4.jpeg', 'Notecards + caja deluxe 10p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
         <div class="card-image-wrap">
-          <img src="img/img7.jpg" alt="Producto 7" class="card-img">
+          <img src="img/4.jpeg" alt="Producto 7" class="card-img">
           <div class="overlay">Comprar</div>
         </div>
-        <p>Producto 7</p>
+        <p>Notecards + caja deluxe 10p
+          <br>
+          $650
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/5.jpeg', 'Números de mesa', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/5.jpeg" alt="Producto 8" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Números de mesa
+          <br>
+          $22 c/u
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/6.jpeg', 'Tags 3D 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/6.jpeg" alt="Producto 9" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Tags 3D 10pz
+          <br>
+          $220
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/7.jpeg', 'Tags shaker 10p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/7.jpeg" alt="Producto 10" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Tags shaker 10p
+          <br>
+          $420
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/8.jpeg', 'Tags silueta 10p', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/8.jpeg" alt="Producto 11" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Tags silueta 10p
+          <br>
+          $200
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/9.jpeg', 'Álbum de firmas', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/9.jpeg" alt="Producto 12" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Álbum de firmas
+          <br>
+          $1,250
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/10.jpeg', 'Libreta personalizada medio oficio', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/10.jpeg" alt="Producto 13" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Libreta personalizada medio oficio
+          <br>
+          $550
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/11.jpeg', 'Kit Stationery', '\n• 10 money holders\n• 5 money holders mini\n• 10 tags 8x8 cm\n• 5 notecards mini\n• Caja de acrílico o deluxe')">
+        <div class="card-image-wrap">
+          <img src="img/11.jpeg" alt="Producto 14" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Kit stationery
+          <br>
+          $860
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/12.jpeg', 'Money holders 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/12.jpeg" alt="Producto 15" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Money holders 10pz
+          <br>
+          $350
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/13.jpeg', 'Money holders textura 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/13.jpeg" alt="Producto 16" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Money holders textura 10pz
+          <br>
+          $330
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/14.jpeg', 'Money holders mini 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/14.jpeg" alt="Producto 17" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Money holders mini 10pz
+          <br>
+          $280
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/15.jpeg', 'Libreta media carta', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/15.jpeg" alt="Producto 18" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Libreta media carta
+          <br>
+          $480
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/16.jpeg', 'Money holders + caja deluxe', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/16.jpeg" alt="Producto 19" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Money holders + caja deluxe
+          <br>
+          $560
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/17.jpeg', 'Money holders + caja de acrílico', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/17.jpeg" alt="Producto 20" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Money holders + caja de acrílico
+          <br>
+          $560
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/18.jpeg', 'Tags silueta + ojal metálico 10pz', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/18.jpeg" alt="Producto 21" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Tags silueta + ojal metálico 10pz
+          <br>
+          $250
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/19.jpeg', 'Oraciones + ojal metálico + borla de hilo', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/19.jpeg" alt="Producto 22" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Oraciones + ojal metálico + borla de hilo
+          <br>
+          $40 c/u
+        </p>
+      </div>
+
+      <div class="card"
+        onclick="openModal('img/20.jpeg', 'Menú tríptico', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quam, neque omnis, vel possimus eos mollitia saepe a voluptatibus eveniet non sint nostrum quas magnam quo!')">
+        <div class="card-image-wrap">
+          <img src="img/20.jpeg" alt="Producto 23" class="card-img">
+          <div class="overlay">Comprar</div>
+        </div>
+        <p>Menú tríptico
+          <br>
+          $35 c/u
+        </p>
       </div>
 
     </div>
@@ -203,9 +440,11 @@
         </form>
 
         <div class="contact-social">
-          <a href="https://www.instagram.com/elanie_design?igsh=amdkOTFtdjBuNDYx&utm_source=qr" target="_blank" class="social-item">
+          <a href="https://www.instagram.com/elanie_design?igsh=amdkOTFtdjBuNDYx&utm_source=qr" target="_blank"
+            class="social-item">
             <div class="social-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -220,8 +459,10 @@
           <a href="https://wa.me/message/4SQRAQCFIOYOH1" target="_blank" class="social-item">
             <div class="social-icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.508 5.829L.057 23.5l5.83-1.527A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.42l-.37-.22-3.46.91.92-3.37-.24-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.117.549 4.099 1.508 5.829L.057 23.5l5.83-1.527A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.52-5.16-1.42l-.37-.22-3.46.91.92-3.37-.24-.38A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
               </svg>
             </div>
             <div>
@@ -232,7 +473,8 @@
 
           <a href="mailto:Elanie.eventos@gmail.com" class="social-item">
             <div class="social-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
                 <polyline points="2,4 12,13 22,4" />
               </svg>
@@ -245,7 +487,8 @@
 
           <a href="https://maps.app.goo.gl/z5ddMWgDGg1xVUeH7?g_st=iw" target="_blank" class="social-item">
             <div class="social-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                 <circle cx="12" cy="9" r="2.5" />
               </svg>
@@ -260,7 +503,7 @@
 
       <!-- Imagen lateral -->
       <div class="contact-img-wrap">
-        <img src="img/img10.jpg" alt="Elanie Design" class="contact-side-img">
+        <img src="img/6.jpeg" alt="Elanie Design" class="contact-side-img">
       </div>
 
     </div>
